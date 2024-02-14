@@ -1,0 +1,125 @@
+.transaction-div {
+  outline: auto;
+  height: 73%;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.heading-div {
+  /* outline: auto; */
+  height: 5%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.h1 {
+  /* outline: auto; */
+  width: fit-content;
+  font-size: smaller;
+}
+
+.h2 {
+  /* outline: auto; */
+  width: fit-content;
+  font-size: smaller;
+}
+
+
+.transaction-item {
+  /* outline: auto; */
+  width: 97%;
+  height: 20%;
+  display: flex;
+  font-size: smaller;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 17px 7px #5f5f5f40;
+}
+
+.category-logo {
+  /* outline: auto; */
+  height: 100%;
+  width: 22%;
+  border-radius: 15px 0 0 15px;
+}
+
+.description-container {
+  /* outline: auto; */
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.category-div {
+  width: 98%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-category {
+  /* outline: auto black; */
+  font-weight: bold;
+  font-size: larger;
+}
+
+.item-date {
+  /* outline: auto black; */
+  font-size: smaller;
+}
+
+.item-description {
+  /* outline: auto; */
+  display: flex;
+  width: 98%;
+  justify-content: flex-start;
+  height: 60%;
+  overflow: hidden;
+  word-wrap: break-word;
+  font-size: 13px;
+  margin-top: 2%;
+}
+
+.amount-container {
+  /* outline: auto; */
+  height: 100%;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 15px 15px 0;
+}
+
+.item-mode {
+  /* outline: auto; */
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  border-radius: 0 15px 0 0;
+}
+
+.item-amount {
+  /* outline: auto; */
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  margin-top: 5%;
+}

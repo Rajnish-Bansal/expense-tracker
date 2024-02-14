@@ -1,0 +1,8 @@
+.dashboard-component {
+  outline: auto;
+  height: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

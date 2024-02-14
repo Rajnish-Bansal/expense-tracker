@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* outline: auto; */
+  height: 100vh;
+}
+
+.container {
+  /* outline: auto; */
+  display: flex;
+  height: 99vh;
+  width: 99vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app-container1 {
+  height: 80vh;
+  width: 22vw;
+  outline: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.app-container2 {
+  height: 80vh;
+  width: 22vw;
+  outline: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  border-radius: 10px;
+  align-items: center;
+  /* background-color: aqua; */
+}

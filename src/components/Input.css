@@ -1,0 +1,138 @@
+.input-component {
+  outline: auto;
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-div {
+  /* outline: auto; */
+  height: 65%;
+  width: 95%;
+  font-size: smaller;
+  margin-top: 1%;
+}
+
+.transactionType {
+  /* outline: auto; */
+  height: 11%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.income-radio {
+  /* outline: auto; */
+  width: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expense-radio {
+  /* outline: auto; */
+  width: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-div {
+  /* outline: auto; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.input-title {
+  /* outline: auto; */
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+  margin-right: 5%;
+}
+
+.transactionMode {
+  /* outline: auto; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.category {
+  /* outline: auto; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.input-amount {
+  /* outline: auto; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.description {
+  /* outline: auto; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.input {
+  /* outline: auto; */
+  width: 50%;
+}
+
+.submit-button-div {
+  /* outline: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12%;
+  width: 100%;
+  margin-top: 9%;
+}
+
+.reset-button {
+  width: 40%;
+  margin-right: 10%;
+}
+
+.submit-button {
+  width: 40%;
+}
+
+button {
+  /* outline: auto; */
+  border-radius: 15px;
+  height: 80%;
+}
+
+.alert-div{
+  /* outline: auto; */
+  text-align: center;
+  margin-top: 5%;
+  color: green;
+  font-weight: bold;
+}

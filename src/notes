@@ -1,0 +1,125 @@
+ // const [total, settotal] = useState(parseFloat(0));
+  // const [amount, setamount] = useState();
+  // const [description, setDescription] = useState([]);
+  // const [transaction, settranscation] = useState([]);
+  // const [warning, setWarning] = useState();  
+  // const [date, setDate] = useState();
+  // const [category, setCategory] = useState("Category");
+  // const [filterType, setFilterType] = useState("All");
+  // const [filterCategory, setFilterCategory] = useState("");
+
+//   const income = () => {
+//     if (amount !== "" && description !== "") {
+//       settotal(total + amount);
+//       setamount("");
+//       setDescription([]);
+//       settranscation([...transaction,[date, category, description, amount, { type: "green" }]]);
+//       setWarning("");
+//       setCategory("Category");
+//       setDate("");
+//     } else if (amount === "" && description !== "") {
+//       setWarning("*Please enter amount");
+//     } else if (amount !== "" && description === "") {
+//       setWarning("*Please enter description");       
+//     } else if (amount === "" && description === "") {
+//       setWarning("*Please enter both details");
+//     }
+//   };
+
+  // const expense = () => {
+  //   if (amount !== "" && description !== "") {
+  //     settotal(total - amount);
+  //     setamount("");
+  //     setDescription([]);
+  //     settranscation([
+  //       ...transaction,
+  //       [date, category, description, amount, { type: "red" }],
+  //     ]);
+  //     setWarning("");
+  //     setCategory("Category");
+  //     setDate("");
+  //   } else if (amount === "" && description !== "") {
+  //     setWarning("*Please enter amount");
+  //   } else if (amount !== "" && description === "") {
+  //     setWarning("*Please enter description");
+  //   } else {
+  //     setWarning("*Please enter both details");
+  //   }
+  // };
+
+  // const clear = () => {
+  //   settotal(0);
+  //   setamount("");
+  //   setDescription([]);
+  //   settranscation([]);
+  //   setWarning("");
+  //   setDate("");
+  //   setCategory("Category");
+  // };
+
+
+      //   setTotalAmount(Number(totalAmount) - Number(inputAmount))
+    //   setTotalAmount((total) => total - parseFloat(inputAmount));
+    // const total =  setTotalAmount((total) => total - parseFloat(inputAmount));
+
+
+    
+     {/*    <div className="homeScreen">
+          // style={{ display: homeScreen === true ? "block" : "none" }} */}
+
+       {/*    <div className="balance-container">
+            <Balance
+              total={outputTotal}
+              incomeTotal={outputTotalIncome}
+              expenseTotal={outputTotalExpense}
+              cashTotal={outputCashBalance}
+              bankTotal={outputBankBalance}
+            /> 
+          </div>*/}
+
+          {/* <div className="heading">
+            <Heading />
+          </div> */}
+
+        {/*    <div className="list-container">
+           <List list={transactions} /> 
+          </div>
+        </div>*/}
+
+        {/* <div
+          className="inputScreen"
+          style={{ display: inputScreen === true ? "block" : "none" }}
+        >
+          {/* <Input
+            setAmountInParent={setoutputTotal}
+            setTransactionsInParent={setTransactions}
+            setIncomeInParent={setOutputTotalIncome}
+            setExpenseInParent={setOutputTotalExpense}
+            setBankBalanceInParent={setOutputBankBalance}
+            setCashBalanceInParent={setOutputCashBalance}
+          /> 
+        </div>*/} 
+
+        {/* <footer className="footer">
+          
+        </footer> */}
+      {/* </div> */}
+
+      {/* <div className="app-container2">
+      <div className="header"> <Header /> </div>
+
+      <div className="inputScreen">
+          <Input
+            setAmountInParent={setoutputTotal}
+            setTransactionsInParent={setTransactions}
+            setIncomeInParent={setOutputTotalIncome}
+            setExpenseInParent={setOutputTotalExpense}
+            setBankBalanceInParent={setOutputBankBalance}
+            setCashBalanceInParent={setOutputCashBalance}
+          />
+      </div>
+        
+      <footer className="footer"> <Footer /></footer>
+
+    </div> 
+    </div>*/}
