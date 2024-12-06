@@ -1,22 +1,25 @@
 .transaction-div {
-  outline: auto;
+  /* outline: auto; */
   height: 73%;
   width: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: black solid 1px;
   /* background-color: aqua; */
 }
 
 .heading-div {
   /* outline: auto; */
-  height: 5%;
+  height: 6%;
   width: 95%;
   display: flex;
   justify-content: space-between;
   margin-top: 2%;
   margin-bottom: 2%;
+  font-weight: 600;
+  /* background-color: blue; */
 }
 
 .h1 {
@@ -29,8 +32,22 @@
   /* outline: auto; */
   width: fit-content;
   font-size: smaller;
+  cursor: pointer;
 }
 
+.li-transaction-div {
+  /* outline: auto; */
+  height: 95%;
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+.no-transaction-div {
+  /* outline: auto; */
+  margin-top: 35%;
+  margin-left: 30%;
+  font-size: larger;
+}
 
 .transaction-item {
   /* outline: auto; */
@@ -40,9 +57,11 @@
   font-size: smaller;
   justify-content: space-between;
   margin-top: 1%;
+  margin-left: 1%;
   margin-bottom: 2%;
-  border-radius: 15px;
-  box-shadow: 0px 0px 17px 7px #5f5f5f40;
+  border-radius: 8px;
+  box-shadow: 0px 0px 1px 2px #5f5f5f40;
+  /* background-color: aqua; */
 }
 
 .category-logo {
@@ -50,11 +69,21 @@
   height: 100%;
   width: 22%;
   border-radius: 15px 0 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  /* outline: auto; */
+  width: 100%;
+  height: 100%;
 }
 
 .description-container {
   /* outline: auto; */
-  width: 55%;
+  width: 50%;
+  padding-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,10 +105,10 @@
   font-size: larger;
 }
 
-.item-date {
-  /* outline: auto black; */
+/* .item-date {
+  outline: auto black;
   font-size: smaller;
-}
+} */
 
 .item-description {
   /* outline: auto; */

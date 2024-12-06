@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./Input.css";
 
 function Input(props) {
-  const [inputType, setInputType] = useState("null");
-  const [inputDate, setInputDate] = useState();
+  const [inputType, setInputType] = useState("Income");
+  const [inputDate, setInputDate] = useState(
+    new Date().toISOString().slice(0, 10)
+  );
   const [inputPaymentMode, setinputPaymentMode] = useState("Cash");
   const [inputCategory, setinputCategory] = useState("Travel");
   const [inputAmount, setinputAmount] = useState();
-  const [inputDescription, setinputDescription] = useState();
+  const [inputDescription, setinputDescription] = useState('');
   const [alert, setAlert] = useState();
 
   const newTransaction = [
@@ -23,41 +25,75 @@ function Input(props) {
 
   const handleInputAmountChange = (e) => {
     setinputAmount(e.target.value);
-    setAlert("");
+  };
+
+  const handleExpenseTransaction = () => {
+    props.setTotalBalance((total) => total - parseFloat(inputAmount));
+    props.setTotalExpense((expense) => expense + parseFloat(inputAmount));
+    updatePaymentModeBalance();
+  };
+
+  const handleIncomeTransaction = () => {
+    props.setTotalBalance((total) => total + parseFloat(inputAmount));
+    props.setTotalIncome((income) => income + parseFloat(inputAmount));
+    updatePaymentModeBalance();
+  };
+
+  const handleTransaction = () => {
+    if (inputType !== "Income") {
+      handleExpenseTransaction();
+    } else {
+      handleIncomeTransaction();
+    }
+  };
+
+  const updatePaymentModeBalance = () => {
+    if (inputType === "Income") {
+      if (inputPaymentMode === "Bank") {
+        props.setBankBalance((amount) => amount + parseFloat(inputAmount));
+      } else {
+        props.setCashBalance((amount) => amount + parseFloat(inputAmount));
+      }
+    } else {
+      if (inputPaymentMode === "Bank") {
+        props.setBankBalance((amount) => amount - parseFloat(inputAmount));
+      } else {
+        props.setCashBalance((amount) => amount - parseFloat(inputAmount));
+      }
+    }
+  };
+
+  const resetForm = () => {
+    props.setTransactions([...props.transactions, ...newTransaction]);
+    setAlert("Transaction added Successfully !!");
+    resetInputFields();
   };
 
   const submit = () => {
-    if (inputAmount !== "") {
-      if (inputType !== "Income") {
-        props.setTotalBalance((total) => total - parseFloat(inputAmount));
-        props.setTotalExpense((expense) => expense + parseFloat(inputAmount));
-        if (inputPaymentMode !== "Cash") {
-          props.setBankBalance((amount) => amount - parseFloat(inputAmount));
-        } else {
-          props.setCashBalance((amount) => amount - parseFloat(inputAmount));
-        }
-      } else {
-        props.setTotalBalance((total) => total + parseFloat(inputAmount));
-        props.setTotalIncome((income) => income + parseFloat(inputAmount));
-        if (inputPaymentMode !== "Bank") {
-          props.setCashBalance((amount) => amount + parseFloat(inputAmount));
-        } else {
-          props.setBankBalance((amount) => amount + parseFloat(inputAmount));
-        }
-      }
-
-      props.setTransactions([...props.transactions, ...newTransaction]);
-      setAlert("Transaction added Sucessfully !!");
-
-      setinputAmount("");
-      setinputCategory("Travel");
-      setinputDescription("");
-      setinputPaymentMode("Cash");
-      setInputDate("");
-
-      console.log(props.settotalBalance);
+    if (!inputAmount || isNaN(inputAmount) || inputAmount <= 0) {
+      setAlert("Please enter a valid amount.");
+      return;
     }
-    // setAlert('Please fill details !')
+    if (!inputDescription || !inputDescription.trim()) {
+      setAlert("Description cannot be empty.");
+      return;
+    }
+    if (new Date(inputDate) > new Date()) {
+      setAlert("Date cannot be in the future.");
+      return;
+    }
+
+    handleTransaction();
+    resetForm();
+    setAlert("Transaction added successfully!");
+  };
+
+  const resetInputFields = () => {
+    setinputAmount("");
+    setinputCategory("Travel");
+    setinputDescription("");
+    setinputPaymentMode("Cash");
+    setInputDate("");
   };
 
   const reset = () => {
@@ -84,11 +120,9 @@ function Input(props) {
               name="type"
               type="radio"
               value="Income"
-              // checked
               checked={inputType === "Income"}
               onChange={() => {
                 setInputType("Income");
-                setAlert("");
               }}
             />
             Income
@@ -101,7 +135,6 @@ function Input(props) {
               checked={inputType === "Expense"}
               onChange={() => {
                 setInputType("Expense");
-                setAlert("");
               }}
             />
             Expense
@@ -116,7 +149,6 @@ function Input(props) {
             value={inputDate}
             onChange={(e) => {
               setInputDate(e.target.value);
-              setAlert("");
             }}
           ></input>
         </div>
@@ -128,7 +160,6 @@ function Input(props) {
             value={inputPaymentMode}
             onChange={(e) => {
               setinputPaymentMode(e.target.value);
-              setAlert("");
             }}
           >
             <option id="mode" value="Cash">
@@ -147,7 +178,6 @@ function Input(props) {
             value={inputCategory}
             onChange={(e) => {
               setinputCategory(e.target.value);
-              setAlert("");
             }}
           >
             <option value="Travel">Travel</option>
@@ -199,26 +229,34 @@ function Input(props) {
 
 export default Input;
 
-// useEffect(() => {
-//   setAmountInParent(totalBalance);
-//   setTransactionsInParent(transactionList);
-//   setIncomeInParent(totalIncome);
-//   setExpenseInParent(totalExpense);
-//   setBankBalanceInParent(bankBalance);
-//   setCashBalanceInParent(cashBalance);
-// }, [
-//   totalBalance,
-//   setAmountInParent,
-//   setTransactionsInParent,
-//   setInputDate,
-//   setinputCategory,
-//   setinputDescription,
-//   transactionList,
-// ]);
 
-// const [transactionList, setTransactionList] = useState([]);
-// const [totalBalance, settotalBalance] = useState(0);
-// const [cashBalance, setCashBalance] = useState(0);
-// const [bankBalance, setBankBalance] = useState(0);
-// const [totalIncome, setTotalIncome] = useState(0);
-// const [totalExpense, setTotalExpense] = useState(0);
+// const submit = () => {
+//   if (inputAmount !== "") {
+//     if (inputType !== "Income") {
+//       props.setTotalBalance((total) => total - parseFloat(inputAmount));
+//       props.setTotalExpense((expense) => expense + parseFloat(inputAmount));
+//       if (inputPaymentMode !== "Cash") {
+//         props.setBankBalance((amount) => amount - parseFloat(inputAmount));
+//       } else {
+//         props.setCashBalance((amount) => amount - parseFloat(inputAmount));
+//       }
+//     } else {
+//       props.setTotalBalance((total) => total + parseFloat(inputAmount));
+//       props.setTotalIncome((income) => income + parseFloat(inputAmount));
+//       if (inputPaymentMode !== "Bank") {
+//         props.setCashBalance((amount) => amount + parseFloat(inputAmount));
+//       } else {
+//         props.setBankBalance((amount) => amount + parseFloat(inputAmount));
+//       }
+//     }
+
+//     props.setTransactions([...props.transactions, ...newTransaction]);
+//     setAlert("Transaction added Sucessfully !!");
+
+//     setinputAmount("");
+//     setinputCategory("Travel");
+//     setinputDescription("");
+//     setinputPaymentMode("Cash");
+//     setInputDate("");
+//   }
+// };

@@ -123,3 +123,42 @@
 
     </div> 
     </div>*/}
+
+
+
+
+    <div className="li-transaction-div">
+          {props.transactions.length === 0 ? (
+            <div className="no-transaction-div">No transactions !!</div>
+          ) : (
+            props.transactions.map((items, index) => (
+              <li key={index} className="transaction-item">
+                "hello"
+                <div className="category-logo">
+                  <span
+                    className="item-date"
+                    style={{ color: items.type === "Income" ? "green" : "red" }}
+                  >
+                    {items.date}
+                  </span>
+                </div>
+                <div
+                  className="description-container"
+                  style={{ color: items.type === "Income" ? "green" : "red" }}>
+                  <div className="category-div">
+                    <span className="item-category">{items.category}</span>
+                    <span className="item-date">{items.date}</span>
+                  </div>
+                  <span className="item-description">{items.description}</span>
+                </div>
+                <div
+                  className="amount-container"
+                  style={{ color: items.type === "Income" ? "green" : "red" }}
+                >
+                  <span className="item-mode">{items.mode}</span>
+                  <span className="item-amount">{"₹" + items.amount}</span>
+                </div>
+              </li>
+            ))
+          )}
+        </div>

@@ -1,0 +1,81 @@
+.sidebar-component {
+  /* background-color: aqua; */
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar-div {
+  position: relative;
+  outline: auto;
+  width: 60%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.temporary-div {
+  position: absolute;
+  outline: auto;
+  height: 30%;
+  width: 10%;
+  background-color: aqua;
+}
+
+.user-details {
+  outline: auto;
+  height: 30%;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-photo {
+  outline: auto;
+  height: 60%;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.username-div {
+  /* outline: auto; */
+  width: fit-content;
+  margin-top: 5%;
+}
+
+.sidebar-items-div {
+  outline: auto;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 0 10px 10px;
+  cursor: pointer;
+  background-color: #FFEFE2;
+  /* justify-content: space-between; */
+}
+
+.sidebar-items {
+  outline: auto;
+  height: 10%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 5%;
+}
+
+.sidebar-button {
+  position: absolute;
+  /* outline: auto; */
+  height: 10%;
+  width: 5%;
+  margin-left: 20%;
+}

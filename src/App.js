@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Homescreen from "./components/Homescreen";
 import Input from "./components/Input";
 import Dashboard from "./components/Dashboard";
+import Sidebar from "./components/Sidebar";
+import Transactions from "./components/Transactions";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -19,9 +21,11 @@ function App() {
     <Router>
       <div className="container">
         <div className="app-container">
-          <Header />
+          <div className="header-route">
+            <Header />
+          </div>
 
-          <Routes>
+          <div className="home-route"><Routes>
             <Route
               exact
               path="/"
@@ -39,7 +43,7 @@ function App() {
 
             <Route
               exact
-              path="Input"
+              path="/Input"
               element={
                 <Input
                   setTotalBalance={setTotalBalance}
@@ -52,10 +56,33 @@ function App() {
                 />
               }
             />
-            <Route exact path="Dashboard" element={<Dashboard />} />
-          </Routes>
-          <Footer />
+            <Route
+              exact
+              path="/Dashboard"
+              element={
+                <Dashboard
+                  totalBalance={totalBalance}
+                  totalIncome={totalIncome}
+                  totalExpense={totalExpense}
+                  transactions={transactions}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/Transactions"
+              element={<Transactions transactions={transactions} />}
+            />
+          </Routes></div>
+
+          
+          <div className="footer-route">
+            <Footer />
+          </div>
         </div>
+        {/* <div className="app-container2">
+          <Sidebar />
+        </div> */}
       </div>
     </Router>
   );

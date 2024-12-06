@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Balance.css";
 
 function Balance(props) {
@@ -6,7 +6,7 @@ function Balance(props) {
     <div className="balance-component">
       <div className="incomeTotal-div">
         <div className="title">Income</div>
-        <div className="amount">{"₹" + props.outputTotalIncome}</div>
+        <div className="amount">{"₹" + " " + props.outputTotalIncome}</div>
       </div>
 
       <div className="balance-div">
@@ -15,7 +15,7 @@ function Balance(props) {
         <div
           className="totalBalance"
           style={{ color: props.outputTotalBalance >= 0 ? "green" : "red" }}>
-          {"₹" + props.outputTotalBalance}
+          {"₹" + " " + props.outputTotalBalance}
         </div>
 
         <div className="balance-amount">
@@ -25,7 +25,7 @@ function Balance(props) {
               className="balanceType-amount"
               style={{ color: props.outputCashBalance >= 0 ? "green" : "red" }}
             >
-              {"₹" + props.outputCashBalance}
+              {"₹" + " " + props.outputCashBalance}
             </div>
           </div>
 
@@ -35,7 +35,7 @@ function Balance(props) {
               className="balanceType-amount"
               style={{ color: props.outputBankBalance >= 0 ? "green" : "red" }}
             >
-              {"₹" + props.outputBankBalance}
+              {"₹" + " " + props.outputBankBalance}
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ function Balance(props) {
 
       <div className="expenseTotal-div">
         <div className="title">Expense</div>
-        <div className="amount">{"₹" + props.outputTotalExpense}</div>
+        <div className="amount">{"₹" + " " + props.outputTotalExpense}</div>
       </div>
     </div>
   );

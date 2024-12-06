@@ -1,14 +1,7 @@
 import React from "react";
-import "./List.css";
-import { useNavigate } from "react-router-dom";
+import "./transactions.css";
 
-function List(props) {
-  const navigate = useNavigate();
-
-  const handleSeeAll = () => {
-    navigate("/transactions"); // Route to the transactions page
-  };
-
+function Transactions({ transactions }) {
   const getCategoryLogo = (category) => {
     switch (category) {
       case "Travel":
@@ -23,23 +16,14 @@ function List(props) {
   };
 
   return (
-    <div className="transaction-div">
-      <div className="heading-div">
-        <div className="h1">Recent Transactions</div>
-        <div
-          className="h2"
-          onClick={handleSeeAll}
-          style={{ cursor: "pointer" }}
-        >
-          See all
-        </div>
-      </div>
-      <div className="li-transaction-div">
-        {props.transactions.length === 0 ? (
-          <div className="no-transaction-div">No transactions !!</div>
+    <div className="transactions-route-page">
+      <h3>All Transactions</h3>
+      <div className="transactions-route-list">
+        {transactions.length === 0 ? (
+          <p>No transactions available !!</p>
         ) : (
-          props.transactions.map((items, index) => (
-            <li key={index} className="transaction-item">
+          transactions.map((items, index) => (
+            <li key={index} className="transactions-route-item">
               <div className="category-logo">
                 <span className="logo">{getCategoryLogo(items.category)}</span>
               </div>
@@ -68,4 +52,4 @@ function List(props) {
   );
 }
 
-export default List;
+export default Transactions;
